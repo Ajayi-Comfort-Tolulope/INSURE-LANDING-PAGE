@@ -8,6 +8,6 @@ navToggle.addEventListener('click', () => {
 
   navToggle.setAttribute(
     'aria-expanded',
-    isOpen
+    String(isOpen)
   );
 });
