@@ -3,6 +3,7 @@
    ========================================== */
 
 :root {
+  /* Colors */
   --clr-primary-dark-violet: hsl(256, 26%, 20%);
   --clr-primary-grayish-blue: hsl(216, 30%, 68%);
 
@@ -12,9 +13,9 @@
 
   --clr-white: #ffffff;
 
+  /* Typography */
   --ff-heading: 'DM Serif Display', serif;
   --ff-body: 'Karla', sans-serif;
-
   --fs-body: 16px;
 }
 
@@ -76,8 +77,8 @@ h4 {
 
 .divider {
   border: none;
-  height: 1px;
-  width: 150px;
+  height: 0.0625rem;
+  width: 9.375rem;
   background-color: var(--clr-neutral-very-light-gray);
   margin-bottom: 2rem;
 }
@@ -95,10 +96,12 @@ h4 {
 .btn {
   display: inline-block;
   padding: 0.75rem 1.75rem;
+
   font-family: var(--ff-body);
   font-weight: 700;
   font-size: 0.875rem;
-  letter-spacing: 1.5px;
+
+  letter-spacing: 0.09375rem;
   text-transform: uppercase;
 
   transition:
@@ -109,10 +112,10 @@ h4 {
 }
 
 
-/* Navigation Button */
+/* Dark Outline Button */
 
 .btn-outline-dark {
-  border: 2px solid var(--clr-neutral-very-dark-violet);
+  border: 0.125rem solid var(--clr-neutral-very-dark-violet);
   color: var(--clr-neutral-very-dark-violet);
 }
 
@@ -122,10 +125,10 @@ h4 {
 }
 
 
-/* Light Button */
+/* Light Outline Button */
 
 .btn-outline-light {
-  border: 2px solid var(--clr-white);
+  border: 0.125rem solid var(--clr-white);
   color: var(--clr-white);
 }
 
@@ -135,13 +138,15 @@ h4 {
 }
 
 
-/* Keyboard Focus States */
+/* ==========================================
+   KEYBOARD FOCUS STATES
+   ========================================== */
 
 .nav-links a:focus-visible,
 .btn:focus-visible,
 .nav-toggle:focus-visible {
-  outline: 3px solid var(--clr-primary-grayish-blue);
-  outline-offset: 4px;
+  outline: 0.1875rem solid var(--clr-primary-grayish-blue);
+  outline-offset: 0.25rem;
 }
 
 
@@ -152,6 +157,7 @@ h4 {
 .header {
   background-color: var(--clr-white);
   padding: 1.5rem 0;
+
   position: relative;
   z-index: 200;
 }
@@ -171,9 +177,12 @@ h4 {
 
 .nav-toggle {
   display: none;
+
   background: transparent;
   border: none;
+
   cursor: pointer;
+
   padding: 0.5rem;
 }
 
@@ -192,16 +201,19 @@ h4 {
   text-transform: uppercase;
   font-size: 0.875rem;
   font-weight: 700;
-  letter-spacing: 1px;
+
+  letter-spacing: 0.0625rem;
 
   color: var(--clr-neutral-dark-grayish-violet);
 }
 
 
 /*
-  General navigation hover effect.
-  The :not(.btn) prevents this rule
-  from overriding button hover styles.
+  Only regular navigation links receive
+  this hover color.
+
+  The .btn is excluded so the View Plans
+  button keeps its own hover styling.
 */
 
 .nav-links a:not(.btn):hover {
@@ -234,13 +246,16 @@ h4 {
 
 .hero-container {
   display: grid;
+
   grid-template-columns: 1fr 1fr;
+
   gap: 2rem;
+
   align-items: center;
 }
 
 .hero h1 {
-  font-size: 4rem;
+  font-size: clamp(2.5rem, 5vw, 4rem);
   margin-bottom: 1.5rem;
 }
 
@@ -264,13 +279,15 @@ h4 {
 }
 
 .features h2 {
-  font-size: 3.5rem;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
   margin-bottom: 4rem;
 }
 
 .features-grid {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 2rem;
 }
 
@@ -313,11 +330,12 @@ h4 {
     url('images/bg-pattern-how-we-work-desktop.svg');
 
   background-repeat: no-repeat;
+
   background-position: right top;
 }
 
 .cta-card h2 {
-  font-size: 3rem;
+  font-size: clamp(2.2rem, 4vw, 3rem);
 }
 
 
@@ -334,6 +352,7 @@ h4 {
     url('images/bg-pattern-footer-desktop.svg');
 
   background-repeat: no-repeat;
+
   background-position: left top;
 }
 
@@ -356,10 +375,10 @@ h4 {
 
 .footer-divider {
   border: none;
-  height: 1px;
 
-  background-color:
-    var(--clr-neutral-dark-grayish-violet);
+  height: 0.0625rem;
+
+  background-color: var(--clr-neutral-dark-grayish-violet);
 
   opacity: 0.3;
 
@@ -368,22 +387,23 @@ h4 {
 
 .footer-grid {
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
+
   gap: 2rem;
 }
 
 
-/*
-  Changed from h6 to h3
-  for correct heading hierarchy.
-*/
+/* Footer Section Headings */
 
 .footer-col h3 {
   font-family: var(--ff-body);
+
   font-size: 0.875rem;
 
   text-transform: uppercase;
-  letter-spacing: 1px;
+
+  letter-spacing: 0.0625rem;
 
   color: var(--clr-neutral-dark-grayish-violet);
 
@@ -396,9 +416,10 @@ h4 {
   text-transform: uppercase;
 
   font-weight: 700;
+
   font-size: 0.875rem;
 
-  letter-spacing: 0.5px;
+  letter-spacing: 0.03125rem;
 }
 
 .footer-col a:hover {
@@ -438,16 +459,14 @@ h4 {
     left: 0;
     right: 0;
 
-    background-color:
-      var(--clr-neutral-very-dark-violet);
+    background-color: var(--clr-neutral-very-dark-violet);
 
     background-image:
       url('images/bg-pattern-mobile-nav.svg');
 
     background-repeat: no-repeat;
 
-    background-position:
-      bottom right;
+    background-position: bottom right;
 
     background-size: contain;
 
@@ -459,8 +478,7 @@ h4 {
 
     transform: translateY(-150%);
 
-    transition:
-      transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
   }
 
   .nav-links.nav-open {
@@ -478,19 +496,15 @@ h4 {
   .nav-links .btn {
     width: 100%;
 
-    border-color:
-      var(--clr-white);
+    border-color: var(--clr-white);
 
-    color:
-      var(--clr-white);
+    color: var(--clr-white);
   }
 
   .nav-links .btn:hover {
-    background-color:
-      var(--clr-white);
+    background-color: var(--clr-white);
 
-    color:
-      var(--clr-neutral-very-dark-violet);
+    color: var(--clr-neutral-very-dark-violet);
   }
 
 
@@ -512,6 +526,7 @@ h4 {
 
   .hero-container {
     grid-template-columns: 1fr;
+
     text-align: center;
   }
 
@@ -521,6 +536,7 @@ h4 {
 
   .hero-image img {
     top: 0;
+
     width: 100%;
   }
 
@@ -530,12 +546,13 @@ h4 {
 
 
   /* ==========================================
-     MOBILE FEATURES
+     MOBILE FEATURES & FOOTER
      ========================================== */
 
   .features-grid,
   .footer-grid {
     grid-template-columns: 1fr;
+
     text-align: center;
   }
 
@@ -556,8 +573,7 @@ h4 {
     background-image:
       url('images/bg-pattern-how-we-work-mobile.svg');
 
-    background-position:
-      right top;
+    background-position: right top;
   }
 
 
@@ -576,6 +592,7 @@ h4 {
 
   .footer-header {
     flex-direction: column;
+
     gap: 1.5rem;
   }
 
@@ -583,8 +600,7 @@ h4 {
     background-image:
       url('images/bg-pattern-footer-mobile.svg');
 
-    background-position:
-      center top;
+    background-position: center top;
   }
 }
 
@@ -595,12 +611,18 @@ h4 {
 
 @media (max-width: 23.4375rem) {
 
+  /* ==========================================
+     CONTAINER
+     ========================================== */
+
   .container {
     width: 92%;
   }
 
 
-  /* Header */
+  /* ==========================================
+     HEADER
+     ========================================== */
 
   .header {
     padding: 1.25rem 0;
@@ -611,11 +633,15 @@ h4 {
   }
 
 
-  /* Mobile Navigation */
+  /* ==========================================
+     MOBILE NAVIGATION
+     ========================================== */
 
   .nav-links {
     top: 70px;
+
     padding: 2.5rem 1.5rem;
+
     gap: 1.5rem;
   }
 
@@ -628,7 +654,9 @@ h4 {
   }
 
 
-  /* Hero */
+  /* ==========================================
+     HERO
+     ========================================== */
 
   .hero {
     padding-bottom: 5rem;
@@ -650,11 +678,14 @@ h4 {
 
   .hero .btn {
     padding: 0.7rem 1.25rem;
+
     font-size: 0.75rem;
   }
 
 
-  /* Features */
+  /* ==========================================
+     FEATURES
+     ========================================== */
 
   .features {
     padding: 6rem 0 5rem;
@@ -662,6 +693,7 @@ h4 {
 
   .features h2 {
     font-size: 2.5rem;
+
     margin-bottom: 3rem;
   }
 
@@ -674,7 +706,9 @@ h4 {
   }
 
 
-  /* CTA */
+  /* ==========================================
+     CTA
+     ========================================== */
 
   .cta {
     margin-bottom: 5rem;
@@ -690,11 +724,14 @@ h4 {
 
   .cta-card .btn {
     padding: 0.7rem 1.25rem;
+
     font-size: 0.75rem;
   }
 
 
-  /* Footer */
+  /* ==========================================
+     FOOTER
+     ========================================== */
 
   .footer {
     padding: 3rem 0;
@@ -719,9 +756,9 @@ h4 {
   *,
   *::before,
   *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto;
   }
 }
